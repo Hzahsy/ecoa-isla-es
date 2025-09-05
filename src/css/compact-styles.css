@@ -1,0 +1,276 @@
+/* Compact Design - Scaled down to ~70% of original size */
+:root {
+  /* Base font size reduction */
+  font-size: 0.7rem; /* Base font size reduced to 70% */
+
+  /* Typography scaling */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.8rem;
+  --font-size-base: 0.875rem; /* ~14px */
+  --font-size-lg: 1rem; /* ~16px */
+  --font-size-xl: 1.25rem; /* ~20px */
+  --font-size-2xl: 1.5rem; /* ~24px */
+  --font-size-3xl: 1.75rem; /* ~28px */
+  --font-size-4xl: 2rem; /* ~32px */
+  --font-size-5xl: 2.5rem; /* ~40px */
+
+  /* Spacing scale (reduced by ~30%) */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+  --spacing-20: 5rem; /* 80px */
+}
+
+/* Base typography scaling */
+body {
+  font-size: var(--font-size-base);
+  line-height: 3;
+}
+
+h1,
+.h1 {
+  font-size: var(--font-size-5xl);
+}
+h2,
+.h2 {
+  font-size: var(--font-size-4xl);
+}
+h3,
+.h3 {
+  font-size: var(--font-size-3xl);
+}
+h4,
+.h4 {
+  font-size: var(--font-size-2xl);
+}
+h5,
+.h5 {
+  font-size: var(--font-size-xl);
+}
+h6,
+.h6 {
+  font-size: var(--font-size-lg);
+}
+
+/* Layout spacing adjustments */
+.container {
+  max-width: 100%;
+}
+
+/* Section padding */
+section {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 1020px), (max-width: 768px), (max-width: 425px), (max-width: 375px), (max-width: 280px), (max-width: 144px), (max-width: 100px), (max-width: 60px), (max-width: 40px), (max-width: 20px), (max-width: 10px) {
+  .contact-form{
+    padding: 1rem;
+    margin: 1rem;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  section {
+  
+    padding: 1rem 0;
+    margin: 1rem 0;
+    width: 90%;
+    height: 100%;
+    top: 20%;
+    left: 5%;
+  }
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+  border-radius: 0.25rem;
+}
+
+.btn-lg {
+  padding: 0.625rem 1.25rem;
+  font-size: var(--font-size-base);
+}
+
+/* Form elements */
+.form-control {
+  padding: 0.375rem 0.75rem;
+  font-size: var(--font-size-base);
+  border-radius: 0.25rem;
+}
+
+/* Navigation */
+.nav-link {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+/* Hero section */
+.hero-section {
+  padding: var(--spacing-16) 0;
+}
+
+.hero-content h1 {
+  font-size: var(--font-size-5xl);
+  width: 100%;
+  margin-bottom: var(--spacing-4);
+}
+
+.hero-content p {
+  color: black;
+  font-weight: 1000;
+  justify-content: center;
+  box-shadow: black;
+}
+.fon-of {
+  font-weight: 100;
+  max-width: 10000px;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  line-height: 1.5rem;
+}
+
+/* Cards */
+.card {
+  border-radius: 0.5rem;
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Testimonials */
+.testimonial-card {
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Footer */
+.footer {
+  padding: var(--spacing-8) 0;
+}
+
+/* Responsive adjustments */
+
+/* Utility classes for fine-tuning */
+.space-y-2 > * + * {
+  margin-top: var(--spacing-2);
+}
+
+.space-y-4 > * + * {
+  margin-top: var(--spacing-4);
+}
+
+.space-y-6 > * + * {
+  margin-top: var(--spacing-6);
+}
+
+/* Form elements specific scaling */
+.form-label {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-2);
+}
+
+/* Button group spacing */
+.btn-group > * + * {
+  margin-left: var(--spacing-3);
+}
+
+/* Navigation bar */
+.navbar {
+  padding: var(--spacing-3) 0;
+}
+
+/* Section headings */
+.section-title {
+  margin-bottom: var(--spacing-6);
+}
+
+/* Reduce icon sizes */
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Form controls */
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+select,
+textarea {
+  font-size: var(--font-size-sm);
+  margin: 1.3rem;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+/* Alert messages */
+.alert {
+  padding: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Modal dialogs */
+.modal-content {
+  border-radius: 0.5rem;
+  padding: var(--spacing-4);
+}
+
+/* Custom form elements */
+.custom-radio,
+.custom-checkbox {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid gaps */
+.grid {
+  gap: var(--spacing-4);
+}
+
+/* Spacing utilities */
+.mt-4 {
+  margin-top: var(--spacing-4);
+}
+.mb-4 {
+  margin-bottom: var(--spacing-4);
+}
+.ml-4 {
+  margin-left: var(--spacing-4);
+}
+.mr-4 {
+  margin-right: var(--spacing-4);
+}
+.pt-4 {
+  padding-top: var(--spacing-4);
+}
+.pb-4 {
+  padding-bottom: var(--spacing-4);
+}
+.pl-4 {
+  padding-left: var(--spacing-4);
+}
+.pr-4 {
+  padding-right: var(--spacing-4);
+}

@@ -1,0 +1,82 @@
+/* ===========================================
+   MAIN CONSOLIDATED CSS
+   This file combines all CSS from the project
+   Last Updated: 2025-08-28
+   =========================================== */
+
+/* 1. Import all CSS files in order */
+@import 'modern-theme.css';
+@import 'animations.css';
+@import 'components.css';
+@import 'optimized.css';
+@import 'accessibility.css';
+@import 'enhanced-styles.css';
+@import 'footer-styles.css';
+@import 'form-styles.css';
+@import 'funding-styles.css';
+@import 'modern-faq.css';
+@import 'media.backup.20250828.css';
+@import 'compact-styles.css';
+
+/* 2. Media Queries (consolidated from all files) */
+/* Base styles for all screen sizes */
+
+/* Mobile First Approach */
+@media (max-width: 767px) {
+  /* Mobile styles */
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1011px) {
+  .mobile-menu-btn { 
+    display: none !important; 
+  }
+  
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    width: 100% !important;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    display: flex !important;
+    justify-content: space-between;
+    width: 70% !important;
+    margin: 0 auto !important;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-link {
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+  }
+  
+  .nav-link i {
+    display: none !important;
+  }
+  
+  .nav-cta .btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Small Desktops */
+@media (min-width: 1012px) and (max-width: 1279px) {
+  /* Small desktop styles */
+}
+
+/* Large Desktops */
+@media (min-width: 1280px) {
+  /* Large desktop styles */
+}
+
+/* 3. Overrides and Fixes */
+/* Add any necessary overrides here */

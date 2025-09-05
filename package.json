@@ -1,0 +1,74 @@
+{
+  "name": "website-hicham",
+  "version": "1.0.0",
+  "description": "AislaEco - Aislamiento Térmico para Áticos",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "watch": "webpack --watch --mode development",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write \"**/*.{js,jsx,json,scss,css,html,md}\"",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "aislamiento",
+    "térmico",
+    "ático",
+    "reforma",
+    "ahorro energético"
+  ],
+  "author": "AislaEco Team",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.3",
+    "aos": "^2.3.4",
+    "body-parser": "^1.20.3",
+    "core-js": "^3.45.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/plugin-transform-runtime": "^7.28.3",
+    "@babel/preset-env": "^7.18.9",
+    "autoprefixer": "^10.4.8",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.1.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.16",
+    "postcss-loader": "^7.0.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

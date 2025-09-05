@@ -1,0 +1,715 @@
+/* ==========================================================================
+   Main Stylesheet - Responsive Design for All Devices
+   ========================================================================== */
+
+/* Base Variables & Reset */
+:root {
+  /* Color Palette */
+  --primary: #10b981;
+  --primary-dark: #059669;
+  --primary-light: #34d399;
+  --white: #ffffff;
+  --dark: #1f2937;
+  --light: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition: all 0.3s ease;
+
+  /* Container */
+  --container-padding: 1.5rem;
+  --container-max-width: 1200px;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--gray-700);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Header & Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 var(--container-padding);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--gray-700);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--gray-700);
+  font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 7rem 0 5rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.hero-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+}
+
+.hero-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--gray-700);
+}
+
+.hero-features li::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Device-Specific Enhancements
+   ========================================================================== */
+
+/* Large Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust container padding for better edge spacing */
+  .container {
+    padding: 0 2rem;
+  }
+
+  /* Improve typography for medium screens */
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  /* Optimize hero section for tablets */
+  .hero-section {
+    padding: 8rem 0 4rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Center align features on tablets */
+  .hero-features {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+
+  /* Adjust image container for tablets */
+  .img-ce {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    margin: 2rem auto 0;
+    text-align: center;
+  }
+
+  .img-ce img {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Small Tablets (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  /* Adjust container padding */
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  /* Optimize typography */
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Adjust hero section */
+  .hero-section {
+    padding: 7rem 0 3.5rem;
+  }
+
+  /* Optimize image container */
+  .img-ce img {
+    width: 60%;
+  }
+}
+
+/* Large Phones (481px - 599px) */
+@media (min-width: 481px) and (max-width: 599px) {
+  /* Adjust container padding */
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  /* Optimize typography */
+  h1 {
+    font-size: 1.875rem;
+  }
+  h2 {
+    font-size: 1.625rem;
+  }
+
+  /* Optimize hero section */
+  .hero-section {
+    padding: 6.5rem 0 3rem;
+  }
+
+  /* Adjust image container */
+  .img-ce img {
+    width: 70%;
+  }
+}
+
+/* Small Phones (320px - 480px) */
+@media (max-width: 480px) {
+  /* Tablet styles */
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Small Phone Optimizations */
+  .mobile-menu-btn {
+    display: block;
+    font-size: 1.75rem;
+    padding: 0.25rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.75rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero-section {
+    padding: 5rem 0 3rem;
+    text-align: center;
+  }
+
+  /* Optimize hero section for small phones */
+  .hero-section {
+    padding: 6rem 0 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-features {
+    text-align: left;
+    max-width: 100%;
+    margin: 0 0 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-features li {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-cta {
+    padding: 0 0.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Image Container */
+.img-ce {
+  position: absolute;
+  top: 100px;
+  right: -500px;
+  padding: 2rem;
+  margin: 0;
+  height: 50%;
+  width: 50%;
+}
+
+.img-ce img {
+  width: 30%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Large Desktops (1440px and up) */
+@media (min-width: 1440px) {
+  /* Add any large desktop specific styles here */
+}
+
+/* Standard Desktops (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  /* Add any standard desktop specific styles here */
+}
+
+/* Responsive adjustments for image container */
+@media (max-width: 1199px) {
+  .img-ce {
+    right: -400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .img-ce {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .img-ce img {
+    width: 60%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .img-ce img {
+    width: 80%;
+  }
+}
+
+/* ==========================================================================
+   Device-Specific Utility Classes
+   ========================================================================== */
+
+/* Hide elements on mobile */
+.mobile-hide {
+  display: block;
+}
+
+/* Show elements only on mobile */
+.mobile-only {
+  display: none;
+}
+
+/* Responsive visibility helpers */
+@media (max-width: 767px) {
+  .mobile-hide {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Touch device detection */
+@media (hover: none) and (pointer: coarse) {
+  /* Styles specific to touch devices */
+  button,
+  .btn,
+  a {
+    min-height: 44px; /* Minimum touch target size */
+    min-width: 44px;
+  }
+
+  /* Increase tap targets for mobile navigation */
+  .nav-link {
+    padding: 0.75rem 0;
+    display: block;
+  }
+}
+
+/* High DPI/Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Add high-DPI optimizations here */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print styles */
+@media print {
+  /* Hide non-essential elements when printing */
+  .no-print,
+  .nav-container,
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  /* Ensure content takes full width */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1cm;
+  }
+
+  /* Improve text contrast for printing */
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+    line-height: 1.3;
+  }
+
+  /* Ensure links are visible when printed */
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Add URL after links */
+  a[href^='http']:after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+}
+
+/* Standard Utility Classes */
+.text-center {
+  text-align: center;
+}
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+.mb-4 {
+  margin-bottom: 2rem;
+}
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+/* Add any additional component styles below */

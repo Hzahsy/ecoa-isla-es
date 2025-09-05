@@ -1,0 +1,355 @@
+/* Funding Info Section Styling */
+.cae{
+  color: #10b981; font-weight: 1000; font-size: 15px;
+}
+.beoconsultar{
+  color: rgb(58, 146, 0); font-size: 15px; font-weight: 900;
+}
+.funding-info-container {
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.funding-info-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+
+.funding-card {
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 80%;
+  min-height: 85%;
+  margin: 2rem auto;
+  padding: 0;
+}
+
+
+
+.funding-image {
+  position: flex;
+  min-height: 100%;
+}
+
+.funding-image img {
+  width: 90%;
+  height: 50%;
+  margin: 0;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.funding-card:hover .funding-image img {
+  transform: scale(0.8);
+}
+
+.funding-content {
+  padding: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.funding-card2 {
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.funding-card2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.funding-card2 video {
+  width: 50%;
+  height: 100%;
+  display: block;
+  border-radius: 16px;
+  transition: all 0.5s ease;
+}
+
+.funding-card2:hover video {
+  transform: scale(1.02);
+}
+
+/* Add a subtle gradient overlay */
+.funding-card2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(16, 185, 129, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+/* Responsive adjustments */
+/* Large devices (desktops, 1025px and up) */
+@media (min-width: 1025px) {
+  .funding-card2 {
+    width: 60vw;
+    height: 60vh;
+    max-width: 60%;
+    margin: 2rem auto;
+    position: relative;
+  }
+  
+  .funding-card2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Center the play button */
+  .funding-card2 .play-button {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Medium devices (tablets, 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .funding-card2 {
+    max-width: 80%;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .funding-card2 {
+    border-radius: 12px;
+  }
+  
+  .funding-card2::after {
+    border-radius: 12px;
+  }
+}
+
+/* Play button overlay for mobile */
+.funding-card2 .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(16, 185, 129, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.funding-card2 .play-button::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
+}
+
+.funding-card2 .play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+  background: rgba(16, 185, 129, 1);
+}
+
+/* Hide play button on desktop for autoplay */
+@media (min-width: 769px) {
+  .funding-card2 .play-button {
+    display: none;
+  }
+}
+
+.funding-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #008f0c, #5cff69);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+}
+
+.funding-title {
+  font-size: 2rem;
+  color: #008f0c;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.funding-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #008f0c, #008f0c);
+  border-radius: 2px;
+}
+
+.funding-text {
+  color: #008f0c;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.funding-features {
+  margin: 2rem 0;
+}
+
+.feature-item {
+  display: -webkit-inline-box;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-icon {
+  background: #e0f2fe;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  color: #008f0c;
+  font-size: 1.1rem;
+}
+
+.feature-text {
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.funding-cta {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #008f0c, #008f0c);
+  color: white;
+  border: none;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px white;
+}
+
+.cta-secondary {
+  background: white;
+  color: #008f0c;
+  border: 2px solid #008f0c;
+}
+
+.cta-secondary:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.funding-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+  .funding-card2{
+    height: 80vh;
+    width: 45vh;
+  }
+@media (max-width: 430px), (max-width: 800px){
+  .funding-card2{
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+}
+
+
+@media (max-width: 360px),(max-width: 800px), (max-wdith: 1100px){
+  .funding-card{
+    width: 100%;
+    padding: 0;
+    margin: 0rem auto;
+    left: 0;
+    padding: 0;
+  }
+  
+
+.funding-content{
+  width: 100%;
+}
+}
+
+
+@media (max-width: 400px), (max-width: 500px){
+  .funding-card2 {
+    height: 70vh;
+    width: 40vh;
+}
+}
